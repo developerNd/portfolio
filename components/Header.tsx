@@ -29,14 +29,23 @@ export default function Header({ isMenuOpen, toggleMenu }: HeaderProps) {
             </a>
           ))}
         </nav>
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
-          {isMenuOpen ? <X /> : <Menu />}
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="md:hidden relative z-50" 
+          onClick={toggleMenu}
+        >
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </Button>
       </div>
 
       {isMenuOpen && (
         <motion.nav 
-          className="fixed inset-0 bg-white z-30 flex flex-col items-center justify-center space-y-4"
+          className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
