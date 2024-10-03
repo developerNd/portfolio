@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowUpCircle, Code, Database, Globe, Mail, Menu, Phone, Server, X, ChevronRight, Star, ExternalLink, Youtube, Rss, Github, Linkedin, Twitter } from 'lucide-react'
+import { ArrowUpCircle, Code, Database, Mail, Menu, Server, X, ExternalLink, Youtube, Github, Linkedin, Twitter } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -223,10 +224,12 @@ export default function Portfolio() {
               >
                 <div className="relative w-64 h-64 mx-auto">
                   <div className="absolute inset-0 bg-indigo-200 rounded-full transform rotate-6"></div>
-                  <img 
+                  <Image 
                     src="/placeholder.svg?height=256&width=256" 
                     alt="Your Name" 
                     className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
+                    width={256}
+                    height={256}
                   />
                 </div>
               </motion.div>
@@ -347,7 +350,7 @@ export default function Portfolio() {
                 >
                   <Card className="overflow-hidden h-full flex flex-col bg-white border-gray-200">
                     <CardContent className="p-0 flex-grow flex flex-col">
-                      <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                      <Image src={project.image} alt={project.title} className="w-full h-48 object-cover" width={300} height={200} />
                       <div className="p-4 flex-grow flex flex-col">
                         <h3 className="text-xl font-semibold mb-2 text-indigo-600">{project.title}</h3>
                         <p className="text-gray-600 mb-4 flex-grow">{project.description}</p>

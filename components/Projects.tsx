@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Projects() {
   const [ref, inView] = useInView({ triggerOnce: true })
@@ -61,7 +62,7 @@ export default function Projects() {
             >
               <Card className="overflow-hidden h-full flex flex-col bg-white border-gray-200">
                 <CardContent className="p-0 flex-grow flex flex-col">
-                  <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                  <Image src={project.image} alt={project.title} width={300} height={200} />
                   <div className="p-4 flex-grow flex flex-col">
                     <h3 className="text-xl font-semibold mb-2 text-indigo-600">{project.title}</h3>
                     <p className="text-gray-600 mb-4 flex-grow">{project.description}</p>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import Image from 'next/image'
 
 export default function About() {
   const [ref, inView] = useInView({ triggerOnce: true })
@@ -36,10 +37,11 @@ export default function About() {
           >
             <div className="relative w-64 h-64 mx-auto">
               <div className="absolute inset-0 bg-indigo-200 rounded-full transform rotate-6"></div>
-              <img 
+              <Image 
                 src="/placeholder.svg?height=256&width=256" 
                 alt="Your Name" 
                 className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
+                width={256} height={256}
               />
             </div>
           </motion.div>
